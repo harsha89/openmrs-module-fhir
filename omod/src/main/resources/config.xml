@@ -58,6 +58,30 @@
         <servlet-name>fhirServelet</servlet-name>
         <servlet-class>org.openmrs.module.fhir.server.FHIRRESTServer</servlet-class>
     </servlet>
+
+    <servlet>
+        <servlet-name>apiDeclarationServlet</servlet-name>
+        <servlet-class>org.openmrs.module.fhir.test.SwaggerTest</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>DefaultServletReaderConfig</servlet-name>
+        <servlet-class>com.wordnik.swagger.servlet.config.DefaultServletReaderConfig</servlet-class>
+        <load-on-startup>2</load-on-startup>
+        <init-param>
+            <param-name>swagger.resource.package</param-name>
+            <param-value>org.openmrs.module.fhir.server</param-value>
+        </init-param>
+        <init-param>
+            <param-name>swagger.api.basepath</param-name>
+            <param-value>http://localhost:8080/openmrs/api-docs</param-value>
+        </init-param>
+        <init-param>
+            <param-name>api.version</param-name>
+            <param-value>1.0.0</param-value>
+        </init-param>
+    </servlet>
+
     <!-- Internationalization -->
     <!-- All message codes should start with ${project.parent.artifactId}. -->
     <messages>
@@ -90,6 +114,15 @@
     <filter-mapping>
         <filter-name>forwardingFilterr</filter-name>
         <url-pattern>/ws/fhir/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>swaggerForward</filter-name>
+        <filter-class>org.openmrs.module.fhir.filter.SwaggerForwardFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>swaggerForward</filter-name>
+        <url-pattern>/fhir/api-docs/*</url-pattern>
     </filter-mapping>
 
     <globalProperty>

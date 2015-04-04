@@ -17,6 +17,7 @@ import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.narrative.CustomThymeleafNarrativeGenerator;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import ca.uhn.fhir.rest.server.RestfulServer;
+import com.wordnik.swagger.annotations.Api;
 import org.openmrs.module.fhir.addressstrategy.OpenMRSFHIRRequestAddressStrategy;
 import org.openmrs.module.fhir.api.util.FHIRUtils;
 import org.openmrs.module.fhir.providers.RestfulAllergyIntoleranceResourceProvider;
@@ -34,6 +35,7 @@ import javax.servlet.ServletException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Api(value = "/ws/fhir", description = "gets some data from a servlet")
 public class FHIRRESTServer extends RestfulServer {
 
 	private static final long serialVersionUID = 1L;
