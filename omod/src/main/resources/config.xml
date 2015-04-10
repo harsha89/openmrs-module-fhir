@@ -61,7 +61,7 @@
 
     <servlet>
         <servlet-name>apiDeclarationServlet</servlet-name>
-        <servlet-class>org.openmrs.module.fhir.test.SwaggerTest</servlet-class>
+        <servlet-class>com.wordnik.swagger.servlet.listing.ApiDeclarationServlet</servlet-class>
     </servlet>
 
     <servlet>
@@ -114,15 +114,6 @@
     <filter-mapping>
         <filter-name>forwardingFilterr</filter-name>
         <url-pattern>/ws/fhir/*</url-pattern>
-    </filter-mapping>
-
-    <filter>
-        <filter-name>swaggerForward</filter-name>
-        <filter-class>org.openmrs.module.fhir.filter.SwaggerForwardFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>swaggerForward</filter-name>
-        <url-pattern>/fhir/api-docs/*</url-pattern>
     </filter-mapping>
 
     <globalProperty>
