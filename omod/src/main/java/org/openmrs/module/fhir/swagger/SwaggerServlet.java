@@ -24,7 +24,7 @@ import java.util.Map;
 /**
  * Created by harsha on 4/13/15.
  */
-public class swaggerServlet extends DefaultServletReaderConfig {
+public class SwaggerServlet extends DefaultServletReaderConfig {
 	private static Map<String, String> params = new HashMap<String, String>();
 	static {
 		params.put("swagger.resource.package", "org.openmrs.module.fhir.server");

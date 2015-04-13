@@ -66,7 +66,7 @@
 
     <servlet>
         <servlet-name>DefaultServletReaderConfig</servlet-name>
-        <servlet-class>org.openmrs.module.fhir.swagger.swaggerServlet</servlet-class>
+        <servlet-class>org.openmrs.module.fhir.swagger.SwaggerServlet</servlet-class>
         <load-on-startup>2</load-on-startup>
         <init-param>
             <param-name>swagger.resource.package</param-name>
