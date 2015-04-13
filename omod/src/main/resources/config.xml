@@ -60,13 +60,13 @@
     </servlet>
 
     <servlet>
-        <servlet-name>apiDeclarationServlet</servlet-name>
+        <servlet-name>swaggerDoc</servlet-name>
         <servlet-class>com.wordnik.swagger.servlet.listing.ApiDeclarationServlet</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>DefaultServletReaderConfig</servlet-name>
-        <servlet-class>com.wordnik.swagger.servlet.config.DefaultServletReaderConfig</servlet-class>
+        <servlet-class>org.openmrs.module.fhir.swagger.swaggerServlet</servlet-class>
         <load-on-startup>2</load-on-startup>
         <init-param>
             <param-name>swagger.resource.package</param-name>
